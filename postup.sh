@@ -20,7 +20,7 @@ echo 'nat on en0 from 10.0.0.1/24 to any -> (en0)' | \
     grep 'Token' | \
     sed 's%Token : \(.*\)%\1%' > /usr/local/var/run/wireguard/pf_wireguard_token.txt
 
-echo 'nat on en0 from AAAA:BBBB:CCCC:DDDD:aaaa::1/64 to any -> (en0)' | \
+echo 'nat on en0 from fd42:42:42:42::1/112 to any -> (en0)' | \
     pfctl -a com.apple/wireguard_ipv6 -Ef - 2>&1 | \
     grep 'Token' | \
     sed 's%Token : \(.*\)%\1%' > /usr/local/var/run/wireguard/pf_wireguard_ipv6_token.txt
